@@ -67,7 +67,9 @@ use utils::*;
 
 pub use crate::{
     dynamic_tab::{DynamicTabViewer, DynamicTree, Tab, TabBuilder},
-    style::{Style, StyleBuilder},
+    style::{StyleBuilder, DockStyle},
+    // alias DockStyle as Style for backwards compatibility
+    style::DockStyle as Style,
     tree::{Node, NodeIndex, Split, Tree},
 };
 

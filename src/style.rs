@@ -4,7 +4,7 @@ use egui::*;
 
 /// Specifies the look and feel of egui_dock.
 #[derive(Clone)]
-pub struct Style {
+pub struct DockStyle {
     pub padding: Option<Margin>,
 
     pub border_color: Color32,
@@ -32,7 +32,7 @@ pub struct Style {
     pub show_close_buttons: bool,
 }
 
-impl Default for Style {
+impl Default for DockStyle {
     fn default() -> Self {
         Self {
             padding: None,
@@ -62,7 +62,7 @@ impl Default for Style {
     }
 }
 
-impl Style {
+impl DockStyle {
     /// Derives relevant fields from `egui::Style` and sets the remaining fields to their default values.
     ///
     /// Fields overwritten by [`egui::Style`] are:
@@ -296,7 +296,7 @@ impl Style {
 
 #[derive(Default)]
 pub struct StyleBuilder {
-    style: Style,
+    style: DockStyle,
 }
 
 impl StyleBuilder {
@@ -416,7 +416,7 @@ impl StyleBuilder {
 
     /// Returns `Style` with set values.
     #[inline(always)]
-    pub fn build(self) -> Style {
+    pub fn build(self) -> DockStyle {
         self.style
     }
 }
